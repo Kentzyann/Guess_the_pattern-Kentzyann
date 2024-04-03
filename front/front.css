@@ -1,0 +1,116 @@
+body{
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+  background-color: #3f9ff6;
+}
+
+.button {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  margin: 10px; 
+}
+
+.button img {
+  display: block;
+  width: 70px; 
+  height: auto;
+
+}
+
+.centered-image img {
+  width: 220px;
+  height: auto;
+}
+
+.centered-button {
+  height: 20px;
+  background-color: #0099cc; 
+  border: 2px solid #FFFFFF;
+  border-radius: 10px;
+  color: white; 
+  padding: 30px 60px; 
+  font-size: 50px; 
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  bottom: 100px;
+  background-color: #DAA520; 
+  line-height: 20px;
+  text-decoration: none;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  
+  
+ 
+}
+
+body {
+  	background: #00b4ff;
+  	color: #333;
+  	height: 100vh;
+  	margin: 0;
+  	padding: 0;
+  	overflow-x: hidden;
+  }
+  #background-wrap {
+  	padding-top: 50px;
+  	width:100%;
+  	position: fixed;
+  	z-index: -1;
+  }
+  @-webkit-keyframes animateCloud {
+      0% {margin-left: -450px;}
+      100% {margin-left: 100%;}
+  }
+  .x1 {
+  	-webkit-animation: animateCloud 20s linear infinite;
+  	-webkit-transform: scale(0.5);
+  }
+  .x2 {
+  	-webkit-animation: animateCloud 7s linear infinite;
+  	-webkit-transform: scale(0.3);
+  }
+  .x3 {
+  	-webkit-animation: animateCloud 3s linear infinite;
+  	-webkit-transform: scale(0.5);
+  }
+  .x4 {
+  	-webkit-animation: animateCloud 5s linear infinite;
+  	-webkit-transform: scale(0.4);
+  }
+  .x5 {
+  	-webkit-animation: animateCloud 20s linear infinite;
+  	-webkit-transform: scale(0.55);
+  }
+  .cloud {
+  	background: #fff;
+  	border-radius: 100px;
+  	box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+  	height: 120px;
+  	position: relative;
+  	width: 350px;
+  }
+  .cloud:after, .cloud:before {
+    background: #fff;
+  	content: '';
+  	position: absolute;
+  	z-indeX: -1;
+  }
+  .cloud:after {
+  	border-radius: 100px;
+  	height: 100px;
+  	left: 50px;
+  	top: -50px;
+  	width: 100px;
+  }
+  .cloud:before {
+  	border-radius: 200px;
+  	width: 180px;
+  	height: 180px;
+  	right: 50px;
+  	top: -90px;
+  }
+
+

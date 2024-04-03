@@ -1,0 +1,37 @@
+body{
+  display: flex;
+  justify-content: center;
+  height: 95vh;  
+  background-color: #3f9ff6;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading .line-box{
+  width: 250px;
+  height: 25px;
+  background-color: #3f9ff6;
+  border: 1px solid ;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.loading .line-box .line{
+  width: 100%;
+  height: 100%;
+  background-color: #0ceffe;
+  transition: opacity 0.5 ease;
+  animation: loading 2s linear forwards;
+  
+}
+  
+    @keyframes loading{
+    0% { width: 0%; }
+    100% { width: 100%;}
+  }
+  
