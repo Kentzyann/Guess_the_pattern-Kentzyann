@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: black;
+  color: white;
+  display: flex;
+  height: 95vh;
+  justify-content: center;
+  background-color: #3f9ff6;
+}
+
+#container {
+  margin-top: 150px;
+}
+
+#countdown {
+  font-size: 100px;
+  padding: 30px;
+}
