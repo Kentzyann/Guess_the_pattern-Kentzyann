@@ -1,8 +1,28 @@
-body{
-  display: flex;
-  justify-content: center;
-  height: 95vh;  
+body {
+  height: 95vh;
   background-color: #3f9ff6;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.score, .timer {
+    font-size: 24px;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 2px black;
+    
+}
+
+.score {
+    order: 1; 
+}
+
+.timer {
+    order: 2; 
 }
 
 .box div{
@@ -12,6 +32,7 @@ body{
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.8)
 }
+
 
 .box div:nth-child(1){
   top: 12%;
@@ -87,40 +108,3 @@ body{
     transform: scale(1.3) translateY(-90px) rotate(360deg); opacity: 1;
   }
 }
-
-  .rainy-weather {
-    margin: 1.5em auto;
-    width: 350px;
-    height: 300px;
-    position: relative;
-  }
-  .cloud-main {
-    width: 350px;
-    height: 100px;
-    background: #ccc;
-    border-radius: 100em;
-    position: absolute;
-    z-index: 100;
-    top: 50px;
-    background: linear-gradient(#F2F2F2 50%, #E5E5E5);
-  }
-  .cloud-center {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto;
-    background: #F2F2F2;
-    position: absolute;
-    border-radius: 100em;
-    top: -30px;
-    right: 50px;
-        }
-  .cloud-left {
-    width: 130px;
-    height: 130px;
-    margin: 0 auto;
-    background: #F2F2F2;
-    position: absolute;
-    border-radius: 100em;
-    top: 0;
-    right: 160px;
-    }
