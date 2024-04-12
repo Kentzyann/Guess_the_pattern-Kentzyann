@@ -1,5 +1,4 @@
 body {
-  font-family: Arial, sans-serif;
   text-align: center;
   background-color: black;
   color: white;
@@ -11,9 +10,10 @@ body {
 
 #container {
   margin-top: 150px;
+  
 }
 
 #countdown {
-  font-size: 90px;
+  font-size: 80px;
   padding: 30px;
 }
