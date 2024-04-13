@@ -138,3 +138,69 @@ button:hover {
     transform: scale(1.3) translateY(-90px) rotate(360deg); opacity: 1;
   }
 }
+
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; 
+}
+
+#gameOverPopup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: white;
+    padding: 20px;
+    border: 3px solid blue;
+    border-radius: 20px;
+    text-align: center;
+    z-index: 999; 
+    display: none;
+    width: 200px; 
+    height: 200px;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    
+}
+
+#gameOverPopup h2 {
+    margin-top: 1px; 
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    background: blue;
+    
+}
+
+#gameOverPopup p {
+  font-size: 20px;
+  font-family: 'Times New Roman';
+  margin-top: 40px;
+}
+
+#gameOverPopup button {
+    width: 40%; 
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.end-button {
+    display: block;
+    padding: 10px;
+    background-color: red; 
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+

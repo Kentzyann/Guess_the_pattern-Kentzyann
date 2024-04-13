@@ -10,14 +10,19 @@
 
 <body>
 
-  <a href="index.html" class="button">
-    <img src="/button_img/Settings_button.png">
-  </a>
+<audio id="settingsSound" src="/bgm_sound/setting_button.mp3"></audio>
+<a href="settings.html" class="button" onclick="playSettingsSound(); return false;">
+  <img src="/button_img/Settings_button.png">
+</a>
+
+  
   <div class="centered-image">
     <img src="/button_img/Guess_the_pattern.png" alt="Centered Image">
   </div>
-    <a href="/Game/game.html" class="centered-button">Play</a>
-  
+
+<audio id="sound" src="/bgm_sound/play_button.mp3"></audio>
+<a href="/Game/game.html" class="centered-button" onclick="playSoundAndRedirect(); return false;">Play</a>
+
   <div id="background-wrap">
       <div class="x1">
         <div class="cloud"></div>
@@ -35,7 +40,8 @@
         <div class="cloud"></div>
       </div>
    </div>
-
-
+   
+  <script src="front.js"></script>
+  <script src="/bgm_player/bgm.js"></script>
 </body>
 </html>

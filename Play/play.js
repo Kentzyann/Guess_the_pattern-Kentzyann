@@ -1,5 +1,5 @@
-// JavaScript for the timer
-let timeLeft = 30; // Initial time in seconds
+
+let timeLeft = 30; 
 const timerDisplay = document.getElementById('timer');
 
 function startTimer() {
@@ -19,28 +19,114 @@ function startTimer() {
 startTimer();
 
 
-const images = ["/A_Guess/bugs_bunny.jpeg","/A_Guess/diego.jpeg","/A_Guess/dipper_pines.jpeg","/A_Guess/dora.jpeg","/A_Guess/goku.jpeg","/A_Guess/inuyasha.jpeg","/A_Guess/jake.jpeg","/A_Guess/jerry.jpeg","/A_Guess/levi.jpeg","/A_Guess/phineas.jpeg","/A_Guess/pikachu.jpeg"]; 
+const images=[
+    "/A_Img/1.bugs_bunny.jpeg",
+    "/A_Img/2.diego.jpeg",
+    "/A_Img/3.dipper_pines.jpeg",
+    "/A_Img/4.dora.jpeg",
+    "/A_Img/5.goku.jpeg",
+    "/A_Img/6.inuyasha.jpeg",
+    "/A_Img/7.jake.jpeg",
+    "/A_Img/8.jerry.jpeg",
+    "/A_Img/9.levi.jpeg",
+    "/A_Img/A.phineas.jpeg",
+    "/A_Img/B.pikachu.jpeg",
+    "/A_Img/C.platypus.jpeg",
+    "/A_Img/D.saitama.jpeg",
+    "/A_Img/E.spongebob.jpeg",
+    "/A_Img/F.tom.jpeg"
+  ]; 
 
-let currentImageIndex;
+let remainingIndexes = Array.from({ length: images.length }, (_, index) => index); 
 
 function setupGame() {
-  currentImageIndex = Math.floor(Math.random() * images.length);
+  if (remainingIndexes.length === 0) {
+    remainingIndexes = Array.from({ length: images.length }, (_, index) => index);
+  }
+
+  const randomIndex = Math.floor(Math.random() * remainingIndexes.length);
+  currentImageIndex = remainingIndexes[randomIndex];
+  remainingIndexes.splice(randomIndex, 1);
   document.getElementById('image').src = images[currentImageIndex];
 }
 
+
 function checkGuess() {
   const guessInput = document.getElementById('guess').value.trim().toLowerCase();
-    getCorrectAnswer().toLowerCase()
   const correctAnswer = getCorrectAnswer();
 
   if (guessInput === correctAnswer) {
     document.getElementById('message').textContent = "Congratulations! You guessed it right!";
+    timeLeft += 5;
+    const scoreDisplay = document.getElementById('score');
+    let score = parseInt(scoreDisplay.textContent);
+    score++;
+    scoreDisplay.textContent = score;
     setupGame(); 
+    const correctSound = new Audio('/bgm_sound/Time_score.mp3');
+    correctSound.play();
   } else {
     document.getElementById('message').textContent = "Oops! Try again.";
+    const wrongSound = new Audio('/bgm_sound/wrong.mp3');
+    wrongSound.play();
+
   }
 }
+  
+  function displayGameOverPopup() {
+    const popup = document.getElementById('gameOverPopup');
+    popup.style.display = 'block';
+}
 
+function startTimer() {
+    const intervalId = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60; 
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        timerDisplay.textContent = `Time: ${minutes}:${seconds}`;
+        timeLeft--;
+        if (timeLeft < 0) {
+        clearInterval(intervalId); 
+        timerDisplay.textContent = "Time's up!";
+        displayGameOverPopup();
+}
+
+    }, 1000);
+}
+
+function displayGameOverPopup() {
+    const popup = document.getElementById('gameOverPopup');
+    const overlay = document.getElementById('overlay');
+    const totalScoreDisplay = document.getElementById('totalScore');
+    const scoreDisplay = document.getElementById('score');
+    const totalScore = scoreDisplay.textContent;
+    totalScoreDisplay.textContent = totalScore;
+    popup.style.display = 'block';
+    overlay.style.display = 'block';
+    
+}
+
+function goHome() {
+    const homeSound = new Audio('/bgm_sound/Home.mp3');
+    homeSound.play();
+    homeSound.onended = () => {
+    window.location.href = "/front/front.html"; 
+  };
+}
+
+function retryGame() {
+    document.getElementById('guess').value = "";
+    document.getElementById('message').textContent = "";
+    timeLeft = 30; 
+    document.getElementById('score').textContent = "00";
+    setupGame();
+    startTimer();
+    const retrySound = new Audio('/bgm_sound/Retry.mp3');
+    retrySound.play();
+    retrySound.onended = () => {
+    window.location.reload();
+  };
+}
 
 function getCorrectAnswer() {
   let correctAnswer;
@@ -77,10 +163,21 @@ function getCorrectAnswer() {
       break;
     case 10:
       correctAnswer = "pikachu";
-      break;  
+      break;
+    case 11:
+      correctAnswer = "platypus";
+      break;
+    case 12:
+      correctAnswer = "saitama";
+      break;
+    case 13:
+      correctAnswer = "spongebob";
+      break;
+    case 14:
+      correctAnswer = "tom";
+      break;
     
   }
   return correctAnswer;
 }
-
 window.onload = setupGame;

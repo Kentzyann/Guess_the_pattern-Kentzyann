@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="play.css">
   <title>Play</title>
 </head>
-
 <body>
   <div class="container">
     <div class="score">Score: <span id="score">00</span></div>
-      <div class="timer" id="timer">Time: 0:30</div>
+    <div class="timer" id="timer">Time: 0:30</div>
   </div>
-  
+    
   <div class="guess">
    <img id="image"scr="" alt=":<">
     <input type="text" id="guess" placeholder="Enter your guess">
@@ -33,7 +32,16 @@
     <div></div>
     <div></div>
   </div>
+<div id="overlay"></div>
+<div id="gameOverPopup">
+    <h2>Game Over!</h2>
+    <p>Total Score: <span id="totalScore">00</span></p>
+    <button onclick="goHome()">Home</button>
+    <button onclick="retryGame()">Retry</button>
+</div>
+
   <script src="play.js"></script>
+ 
 
 </body>
 </html>
