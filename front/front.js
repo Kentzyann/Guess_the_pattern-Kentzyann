@@ -1,3 +1,4 @@
+
 function playSettingsSound() {
     var sound = document.getElementById('settingsSound');
     sound.play();
@@ -5,6 +6,7 @@ function playSettingsSound() {
         window.location.href = "/settings.html";
     };
 }
+
 
 function playSoundAndRedirect() {
     var sound = document.getElementById('sound');
@@ -15,8 +17,14 @@ function playSoundAndRedirect() {
 }
 
 
+function showSettingsPopup() {
+  var popup = document.getElementById("settingsPopup");
+  var settingsSound = document.getElementById("settingsSound");
+  settingsSound.play(); 
+  popup.style.display = "block"; 
+}
 
-
-
-
-
+function hideSettingsPopup() {
+  var popup = document.getElementById("settingsPopup");
+  popup.style.display = "none"; 
+}

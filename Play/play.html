@@ -8,17 +8,22 @@
   <title>Play</title>
 </head>
 <body>
-  <div class="container">
+  <div class="division">
     <div class="score">Score: <span id="score">00</span></div>
     <div class="timer" id="timer">Time: 0:30</div>
   </div>
-    
-  <div class="guess">
-   <img id="image"scr="" alt=":<">
+
+<div class="container">
+  <div class="image-container">
+    <img id="image" src="" alt=":<">
+  </div>
+  <div class="input-container">
     <input type="text" id="guess" placeholder="Enter your guess">
     <button onclick="checkGuess()">Submit Guess</button>
-    <p id="message"></p>
   </div>
+  <p id="message"></p>
+</div>
+
   
   <div class="box">
     <div></div>
@@ -32,6 +37,7 @@
     <div></div>
     <div></div>
   </div>
+
 <div id="overlay"></div>
 <div id="gameOverPopup">
     <h2>Game Over!</h2>
@@ -40,8 +46,16 @@
     <button onclick="retryGame()">Retry</button>
 </div>
 
+
+
+<div class="home-button">
+    <a href="#" onclick="goToGameOver()">
+        <img src="/button_img/back_button.png" alt="Back to Home">
+    </a>
+</div>
+ 
   <script src="play.js"></script>
  
-
 </body>
 </html>
+
